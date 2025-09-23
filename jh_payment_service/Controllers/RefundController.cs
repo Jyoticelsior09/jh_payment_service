@@ -19,7 +19,7 @@ namespace jh_payment_service.Controllers
         /// <summary>
         /// Process a new refund request for a user and transaction.
         /// </summary>
-        [HttpPut("refund/{userId}/{transactionId}")]
+        [HttpPost("initiate/{userId}/{transactionId}")]
         public async Task<ResponseModel> ProcessRefund([FromRoute] long userId, [FromRoute] string transactionId)
         {
             return await _refundService.ProcessRefund(userId, transactionId);
